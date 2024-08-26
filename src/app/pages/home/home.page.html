@@ -1,0 +1,20 @@
+<ion-header class="ion-no-border">
+  <app-header (onMenuToggle)="onMenuToggle($event)"></app-header>
+  <app-profile-header *ngIf="menuState"></app-profile-header>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <app-content-section *ngIf="(personals$ | async)?.length! > 0" title="PERSONAIS">
+    <div class="w-auto flex-row flex overflow-x-auto hide-scrollbar">
+      <app-card *ngFor="let personal of personals$ | async" [title]="personal.name" [image]="personal.picture"
+        [alt]="personal.name + ' picture'" (click)="openPersonalModal(personal)"></app-card>
+    </div>
+  </app-content-section>
+
+  <app-content-section *ngIf="(programs$ | async)?.length! > 0" title="PROGRAMAS" [showNewBadge]="true">
+    <div class="w-auto flex-row flex overflow-x-auto hide-scrollbar">
+      <app-card *ngFor="let program of programs$ | async" [title]="program.name" [description]="program.description!"
+        [image]="program.picture" [alt]="program.name + ' picture'" (click)="openProgramModal(program)"></app-card>
+    </div>
+  </app-content-section>
+</ion-content>

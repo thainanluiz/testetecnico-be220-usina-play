@@ -1,0 +1,20 @@
+<div class="min-w-[250px] max-w-[250px] shadow-md overflow-hidden">
+  <ion-card class="relative flex flex-col h-full ion-activatable ripple-parent rounded-xl">
+    <img *ngIf="image" [src]="image" [alt]="alt" class="w-full h-[150px] object-cover" />
+
+    <ion-card-header class="absolute left-0 w-full py-2 px-3 bg-gradient-to-t from-black/70 to-transparent"
+      [ngClass]="description ? 'bottom-[4.9rem]' : 'bottom-0'">
+      <ion-card-title class="text-lg font-semibold text-white overflow-hidden text-ellipsis whitespace-nowrap">
+        {{ title }}
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content *ngIf="description">
+      <p class="text-sm line-clamp-3">
+        {{ description }}
+      </p>
+    </ion-card-content>
+
+    <ion-ripple-effect></ion-ripple-effect>
+  </ion-card>
+</div>

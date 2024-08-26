@@ -35,3 +35,23 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+/* Tailwind Theme */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Global CSS */
+@layer utilities {
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+  }
+}
+
+/* NGX Toastr */
+@import 'ngx-toastr/toastr';

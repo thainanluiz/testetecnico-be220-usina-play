@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()" class="text-primary">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ personal?.name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="flex flex-col items-center text-center">
+    <div class="mb-4">
+      <ion-avatar class="w-32 h-32">
+        <img [src]="personal?.picture" alt="{{ personal?.name }} picture"
+          class="object-cover w-full h-full rounded-full" />
+      </ion-avatar>
+    </div>
+    <h2 class="text-2xl font-bold mb-2">{{ personal?.name }}</h2>
+    <div class="text-justify max-w-md mx-auto text-sm mb-4">
+      <p class="leading-relaxed">{{ personal?.description }}</p>
+    </div>
+    <div class="p-4 rounded-lg shadow-lg max-w-md mx-auto text-sm">
+      <div class="mb-4">
+        <p class="font-semibold text-lg ">Horário de Trabalho</p>
+        <div class="flex flex-col space-y-1">
+          <p>Início: {{ personal?.startTime }}</p>
+          <p>Término: {{ personal?.endTime }}</p>
+        </div>
+      </div>
+      <div>
+        <p class="font-semibold text-lg">Dias de Trabalho</p>
+        <div class="flex flex-wrap gap-2 mt-2">
+          <ion-badge *ngFor="let day of translatedWorkDays()" color="primary" class="text-white">
+            {{ day }}
+          </ion-badge>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

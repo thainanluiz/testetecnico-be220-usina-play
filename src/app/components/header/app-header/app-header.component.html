@@ -1,0 +1,7 @@
+<div class="h-14 px-3 flex items-center justify-between bg-neutral-800">
+  <ion-icon [name]="menuState ? 'close-outline' : 'menu-outline'" size="large" (click)="toggleMenu()"
+    aria-label="Toggle menu" class="cursor-pointer"></ion-icon>
+  <img [src]="clientLogo" alt="Client logo" class="w-9 h-auto" />
+  <ion-icon name="notifications" aria-label="Notifications"
+    class="bg-neutral-900 text-orange-400 rounded-full p-3 cursor-pointer"></ion-icon>
+</div>

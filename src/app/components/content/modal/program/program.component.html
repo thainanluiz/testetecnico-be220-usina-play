@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()" class="text-primary">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ program?.name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-no-padding">
+  <div class="flex flex-col items-center text-center">
+    <img [src]="program?.picture" alt="{{ program?.name }} picture" class="object-cover w-full h-full mb-4" />
+    <div class="m-4">
+      <h2 class="text-2xl font-bold mb-2">{{ program?.name }}</h2>
+      <div class="text-justify max-w-md mx-auto text-sm">
+        <p class="leading-relaxed">{{ program?.description }}</p>
+      </div>
+    </div>
+  </div>
+</ion-content>

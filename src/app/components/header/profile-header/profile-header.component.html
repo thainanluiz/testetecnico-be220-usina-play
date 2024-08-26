@@ -1,0 +1,23 @@
+<div class="h-auto py-2 px-3 bg-neutral-800 rounded-bl-3xl rounded-br-3xl">
+  <div class="flex items-center mb-3">
+    <ion-avatar>
+      <img src="../../../assets/images/sample.png" alt="Profile picture of John Doe" />
+    </ion-avatar>
+    <div class="ml-3">
+      <h1 class="text-lg font-semibold text-neutral-100">John Doe</h1>
+      <ion-badge class="uppercase" color="tertiary">Nível Roxo</ion-badge>
+    </div>
+  </div>
+  <div class="w-full px-[2px] bg-neutral-900 rounded-full flex justify-between">
+    <ion-button expand="block" fill="clear" shape="round" aria-label="Meu Corpo"
+      (click)="showToast('Meu Corpo', 'Suas informações de saúde e bem-estar')">
+      <ion-icon slot="start" name="accessibility"></ion-icon>
+      Meu Corpo
+    </ion-button>
+    <ion-button expand="block" fill="clear" shape="round" aria-label="Conquistas"
+      (click)="showToast('Conquistas', 'Seus prêmios e conquistas')">
+      <ion-icon slot="start" name="trophy"></ion-icon>
+      Conquistas
+    </ion-button>
+  </div>
+</div>
